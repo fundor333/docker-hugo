@@ -1,7 +1,7 @@
-publysher/hugo
+fundor333/hugo
 ==============
 
-`publysher/hugo` is a [Docker](https://www.docker.io) base image for static sites generated with [Hugo](http://gohugo.io). 
+`fundor333/hugo` is a [Docker](https://www.docker.io) base image for static sites generated with [Hugo](http://gohugo.io) fork from `publysher/hugo`. 
 
 Images derived from this image can either run as a stand-alone server, or function as a volume image for your web server. 
 
