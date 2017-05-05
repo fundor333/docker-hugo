@@ -1,13 +1,23 @@
 ## -*- docker-image-name: "fundor333/hugo" -*-
-FROM debian:wheezy
+FROM alpine
 LABEL maintainer "fundor333@gmail.com"
 
 # Download and install hugo
 ENV HUGO_VERSION 0.20.7
-ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.deb
+ENV HUGO_DIRECTORY hugo_${HUGO_VERSION}_Linux-64bit
+ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 
-ADD https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} /tmp/hugo.deb
-RUN dpkg -i /tmp/hugo.deb && rm /tmp/hugo.deb
+# Install HUGO
+RUN set -x && \
+  apk add --update wget ca-certificates && \
+  wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
+  tar xzf ${HUGO_BINARY} && \
+  rm -r ${HUGO_BINARY} && \
+  mv hugo /usr/bin/hugo && \
+  rm -r LICENSE.md && \
+  rm -r README.md && \
+  apk del wget ca-certificates && \
+  rm /var/cache/apk/*
 
 # Create working directory
 RUN mkdir /usr/share/blog
