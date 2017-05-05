@@ -1,19 +1,13 @@
 ## -*- docker-image-name: "fundor333/hugo" -*-
 FROM debian:wheezy
-MAINTAINER fundor333@gmail.com
-
-# Install pygments (for syntax highlighting) 
-RUN apt-get -qq update \
-	&& DEBIAN_FRONTEND=noninteractive apt-get -qq install -y --no-install-recommends python-pygments git ca-certificates \
-	&& rm -rf /var/lib/apt/lists/*
+LABEL maintainer "fundor333@gmail.com"
 
 # Download and install hugo
 ENV HUGO_VERSION 0.20.7
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.deb
 
 ADD https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} /tmp/hugo.deb
-RUN dpkg -i /tmp/hugo.deb \
-	&& rm /tmp/hugo.deb
+RUN dpkg -i /tmp/hugo.deb && rm /tmp/hugo.deb
 
 # Create working directory
 RUN mkdir /usr/share/blog
