@@ -5,6 +5,8 @@
 
 Images derived from this image can either run as a stand-alone server, or function as a volume image for your web server. 
 
+For my personal use I make smaller the image of _publysher_ because I use it in my automation service and I want a more fast pipeline.
+
 ## Prerequisites
 
 
@@ -62,4 +64,6 @@ The image is also suitable for use as a volume image for a web server, such as [
 ## Examples
 
 
-For an example of a Hugo site, have a look at [my site](https://gitlab.com/fundor333/fundor333.gitlab.io)
+For an example of a Hugo site, have a look at [my site](https://gitlab.com/fundor333/fundor333.gitlab.io).
+
+My site is based on GitLab Pages, so I have a complete configuration on the repository. If you want you can copy my config
