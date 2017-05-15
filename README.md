@@ -4,6 +4,8 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/fundor333/hugo.svg)
 ![Docker Automated build](https://img.shields.io/docker/automated/fundor333/hugo.svg)
 ![Docker Build Status](https://img.shields.io/docker/build/fundor333/hugo.svg)
+![ImageLayers Size](https://img.shields.io/imagelayers/image-size/fundor333/hugo/latest.svg)
+![ImageLayers Layers](https://img.shields.io/imagelayers/layers/fundor333/hugo/latest.svg)
 
 `fundor333/hugo` is a [Docker](https://www.docker.io) base image for static sites generated with [Hugo](http://gohugo.io) fork from `publysher/hugo`. 
 
