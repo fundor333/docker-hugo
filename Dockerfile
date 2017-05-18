@@ -9,6 +9,8 @@ ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 
 # Install HUGO
 RUN set -x && \
+  apk add --update wget ca-certificates && \
+  update-ca-certificates  && \
   wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
   tar xzf ${HUGO_BINARY} && \
   rm -r ${HUGO_BINARY} && \
@@ -17,8 +19,6 @@ RUN set -x && \
   rm -r README.md && \
   apk del wget ca-certificates && \
   rm /var/cache/apk/* && \
-  apk --no-cache add ca-certificates &&\
-  update-ca-certificates && \
   mkdir /usr/share/blog
 
 WORKDIR /usr/share/blog
