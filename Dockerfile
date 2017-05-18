@@ -16,7 +16,6 @@ RUN set -x && \
   mv hugo /usr/bin/hugo && \
   rm -r LICENSE.md && \
   rm -r README.md && \
-  apk del wget ca-certificates && \
   rm /var/cache/apk/* && \
   mkdir /usr/share/blog
 
