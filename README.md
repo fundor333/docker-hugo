@@ -1,5 +1,8 @@
 # fundor333/hugo
 
+[![license](https://img.shields.io/github/license/fundor333/docker-hugo.svg)]()
+
+
 ![Docker Stars](https://img.shields.io/docker/stars/fundor333/hugo.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/fundor333/hugo.svg)
 ![Docker Automated build](https://img.shields.io/docker/automated/fundor333/hugo.svg)
