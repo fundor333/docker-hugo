@@ -10,7 +10,7 @@ ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 # Install HUGO
 RUN set -x && \
   apk add --update wget ca-certificates && \
-  wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
+  wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
   tar xzf ${HUGO_BINARY} && \
   rm -r ${HUGO_BINARY} && \
   mv hugo /usr/bin/hugo && \
