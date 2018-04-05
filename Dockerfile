@@ -3,21 +3,21 @@ FROM alpine:latest
 LABEL maintainer "fundor333@gmail.com"
 
 # Download and install hugo
-ENV HUGO_VERSION 0.37.1
+ENV HUGO_VERSION 0.38
 ENV HUGO_DIRECTORY hugo_${HUGO_VERSION}_Linux-64bit
 ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 
 # Install HUGO
 RUN set -x &&\
-  apk add --update wget ca-certificates &&\
-  wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} &&\
-  tar xzf ${HUGO_BINARY} &&\
-  rm -r ${HUGO_BINARY} && \
-  mv hugo /usr/bin/hugo && \
-  rm -r LICENSE.md && \
-  rm -r README.md && \
-  rm /var/cache/apk/* && \
-  mkdir /usr/share/blog
+	apk add --update wget ca-certificates &&\
+	wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} &&\
+	tar xzf ${HUGO_BINARY} &&\
+	rm -r ${HUGO_BINARY} && \
+	mv hugo /usr/bin/hugo && \
+	rm -r LICENSE.md && \
+	rm -r README.md && \
+	rm /var/cache/apk/* && \
+	mkdir /usr/share/blog
 
 WORKDIR /usr/share/blog
 EXPOSE 1313
