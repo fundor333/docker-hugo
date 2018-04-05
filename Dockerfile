@@ -7,7 +7,7 @@ ENV HUGO_VERSION 0.38.1
 ENV HUGO_DIRECTORY hugo_${HUGO_VERSION}_Linux-64bit
 ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 
-# Install HUGO
+# Installing Hugo and ca-certificates
 RUN set -x &&\
 	apk add --update wget ca-certificates &&\
 	wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} &&\
