@@ -14,7 +14,7 @@ RUN set -x &&\
 	tar xzf ${HUGO_BINARY} &&\
 	rm -r ${HUGO_BINARY} && \
 	mv hugo /usr/bin/hugo && \
-	rm -r LICENSE.md && \
+	rm -r LICENSE && \
 	rm -r README.md && \
 	rm /var/cache/apk/* && \
 	mkdir /usr/share/blog
