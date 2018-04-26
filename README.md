@@ -68,11 +68,3 @@ The image is also suitable for use as a volume image for a web server, such as [
 
 	docker run -d -v /usr/share/nginx/html --name site-data my/image
 	docker run -d --volumes-from site-data --name site-server -p 80:80 nginx
-
-
-## Examples
-
-
-For an example of a Hugo site, have a look at [my site](https://gitlab.com/fundor333/fundor333.gitlab.io).
-
-My site is based on GitLab Pages, so I have a complete configuration on the repository. If you want you can copy my config
