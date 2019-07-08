@@ -1,5 +1,0 @@
-sudo: required
-language: bash
-
-script:
- - curl -H "Content-Type: application/json" --data '{"source_type": "Branch", "source_name": "TRAVIS_BRANCH"}' -X POST https://registry.hub.docker.com/u/fundor333/hugo/trigger/77331c49-6765-4c40-9dbe-78f6e23f5c34/
