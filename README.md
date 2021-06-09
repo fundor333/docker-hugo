@@ -64,6 +64,7 @@ If you are using `boot2docker`, you need to adjust the base URL:
 
 	docker run -p 1313:1313 -e HUGO_BASE_URL=http://YOUR_DOCKER_IP:1313 my/image
 
+
 The image is also suitable for use as a volume image for a web server, such as [nginx](https://registry.hub.docker.com/_/nginx/)
 
 	docker run -d -v /usr/share/nginx/html --name site-data my/image
