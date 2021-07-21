@@ -1,6 +1,6 @@
 ## -*- docker-image-name: "fundor333/hugo" -*-
 FROM alpine:latest
-LABEL maintainer "fundor333@gmail.com"
+LABEL maintainer "docker@fundor333.com"
 
 # Download and install hugo
 ENV HUGO_VERSION 0.85.0
