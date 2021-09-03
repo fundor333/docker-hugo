@@ -2,8 +2,8 @@ name: ci
 
 on:
   push:
-    branches:
-      - 'master'
+  push:
+  workflow_dispatch:
 
 jobs:
   docker:
