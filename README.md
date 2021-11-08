@@ -6,7 +6,6 @@
 ![Docker Stars](https://img.shields.io/docker/stars/fundor333/hugo.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/fundor333/hugo.svg)
 ![Docker Automated build](https://img.shields.io/docker/automated/fundor333/hugo.svg)
-![Docker Build Status](https://img.shields.io/docker/build/fundor333/hugo.svg)
 [![](https://images.microbadger.com/badges/image/fundor333/hugo.svg)](https://microbadger.com/images/fundor333/hugo "Get your own image badge on microbadger.com")
 
 
