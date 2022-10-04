@@ -3,7 +3,7 @@ FROM alpine:latest
 LABEL maintainer "docker@fundor333.com"
 
 # Download and install hugo
-ENV HUGO_VERSION 0.104.2
+ENV HUGO_VERSION 0.104.3
 ENV HUGO_DIRECTORY hugo_extended_${HUGO_VERSION}_Linux-64bit
 ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 
