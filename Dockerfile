@@ -9,6 +9,8 @@ ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 
 # Installing Hugo and ca-certificates
 RUN set -x &&\
+  apk add gcompat &&\
+  apk add libstdc++  &&\
   apk add --update wget ca-certificates &&\
   wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} &&\
   tar xzf ${HUGO_BINARY} &&\
