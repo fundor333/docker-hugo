@@ -4,19 +4,21 @@ LABEL maintainer "docker@fundor333.com"
 
 # Download and install hugo
 ENV HUGO_VERSION 0.118.2
-ENV HUGO_DIRECTORY hugo_extended_${HUGO_VERSION}_Linux-64bit
-ENV HUGO_BINARY ${HUGO_DIRECTORY}.tar.gz
 
 # Installing Hugo and ca-certificates
 RUN set -x &&\
-  apk add gcompat &&\
-  apk add libstdc++  &&\
-  apk add --update wget ca-certificates &&\
+  apk add --no-cache --update gcompat libstdc++ wget ca-certificates &&\
+  case "$(uname -m)" in \
+  x86_64) ARCH=amd64 ;; \
+  aarch64) ARCH=arm64 ;; \
+  *) echo "hugo official release only support amd64 and arm64 now"; exit 1 ;; \
+  esac && \
+  HUGO_DIRECTORY="hugo_extended_${HUGO_VERSION}_linux-${ARCH}" && \
+  HUGO_BINARY="${HUGO_DIRECTORY}.tar.gz" && \
   wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} &&\
   tar xzf ${HUGO_BINARY} &&\
-  rm -r ${HUGO_BINARY} && \
+  rm -fr ${HUGO_BINARY} README.md LICENSE  && \
   mv hugo /usr/bin/hugo && \
-  rm /var/cache/apk/* && \
   mkdir /usr/share/blog
 
 WORKDIR /usr/share/blog
