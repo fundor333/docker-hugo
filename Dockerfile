@@ -3,7 +3,7 @@ FROM alpine:latest
 LABEL maintainer "docker@fundor333.com"
 
 # Download and install hugo
-ENV HUGO_VERSION 0.123.1
+ENV HUGO_VERSION 0.123.2
 
 # Installing Hugo and ca-certificates
 RUN set -x &&\
